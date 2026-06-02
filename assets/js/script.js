@@ -1,28 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
-
+    
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
-                alert("You clicked submit!");
+                checkAnswer();
             } else {
-                let gameType = this.getAttribute("data-type");
-                alert(`You clicked ${gameType}`);
+                
             }
         });
     }
 }
 );
-function runGame() {
+
+/**
+    * The main game "loop", called when the script is first loaded and after the user answers the question
+ */
+function runGame(gameType) {
+    // Generate two random numbers between 1 and 25
+    let num1 = Math.floor(Math.random() * 25) + 1;
+    let num2 = Math.floor(Math.random() * 25) + 1;
+}
+
+
+function checkAnswer({num1, num2, operator, gameType}) {
 
 }
 
-function checkAnswer() {
+function calculateCorrectAnswer({num1, num2, operator}) {
 
-}
-
-function calculateCorrectAnswer() {
-    
 }
 
 function incrementScore() {
@@ -30,17 +36,17 @@ function incrementScore() {
 }
 
 function incrementWrongAnswer() {
+}
+
+function displayAdditionQuestion({num1, num2, operator}) {
 
 }
 
-function displayAdditionQuestion() {
-
+function displaySubtractQuestion({num1, num2, operator}) {
 }
 
-function displaySubtractQuestion() {
-
+function displayMultiplyQuestion({num1, num2, operator}) {
 }
 
-function displayMultiplyQuestion() {
-
+function displayDivisionQuestion({num1, num2, operator}) {
 }
